@@ -45,9 +45,16 @@
       {{ content }}
     </main>
     <footer class="page-footer brown lighten-2">
-      {% if site.github.is_project_page %}
-        <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">Страница проекта {{ site.github.repository_name }} на Гитхабе</a>.</span>
-      {% endif %}
+      <div class="footer-copyright">
+        <div class="container">
+          {% if site.github.is_project_page %}
+            <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">Страница проекта {{ site.github.repository_name }} на Гитхабе</a>.</span>
+          {% else %}
+            © Local Copyright Text
+          {% endif %}
+          <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+        </div>
+      </div>
     </footer>
   </body>
 </html>
