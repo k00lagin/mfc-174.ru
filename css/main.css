@@ -53,3 +53,50 @@ main {
 img {
     max-width: 100%;
 }
+
+.page-header details {
+    transition: background-color .3s;
+    font-size: 1rem;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+}
+
+.page-header details > summary {
+    padding: 0 15px;
+    height: 100%;
+}
+
+.page-header details > summary:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.page-header details > .sidenav {
+    display: block;
+    left: unset;
+    right: 0;
+    transform: translateX(100%);
+}
+
+details[open] > .sidenav {
+    transform: translateX(0%);
+}
+
+.page-header details > summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] > summary::before {
+    content: " ";
+    background: rgba(0, 0, 0, 0.3);
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+

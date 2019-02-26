@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/materialize.css">
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/materialize.min.js"></script>
@@ -24,18 +25,23 @@
     <a id="skip-to-content" class="visually-hidden" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <nav>
-        <div class="nav-wrapper">
-          <ul id="nav-mobile" class="right hide-on-med-and-down" style="width:100%;display: flex;">
+      <nav class="nav-wrapper">
+          <ul id="nav-mobile" style="width:100%;display: flex;">
             <li>
                 <a href="{{ site.url }}">
                     <svg style="width: 1.8em;fill: #fff;transform: translateY(33%);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.329 69.665"><path d="M14.658 44.265v-18.6H0v18.6A18.334 18.334 0 0 0 9.181 60.14l16.484 9.525V52.73L16.51 47.44a3.615 3.615 0 0 1-1.852-3.175"/><path d="M25.638 62.336l16.51-9.525c5.662-3.281 9.181-9.34 9.181-15.875V0H25.665v14.658h10.98v22.251a3.676 3.676 0 0 1-1.826 3.175l-9.154 5.292v16.96zM25.638 0L0 25.665h25.638z"/></svg>
                 </a>
             </li>
             <li class="spacer"></li>
-            <li><a href="{{ site.url }}/instructions">Инструкции</a></li>
+            {% include menu.html class="hide-on-med-and-down" %}
+            <details class="dropdown hide-on-large-only">
+              <summary class="valign-wrapper" aria-haspopup="menu"><i class="material-icons">menu</i></summary>
+              <ul class="sidenav">
+                {% include menu.html %}
+              </ul>
+            </details>
           </ul>
-        </div>
+
       </nav>
       <!--<h1 class="">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>-->
     </header>
