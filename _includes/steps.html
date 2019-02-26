@@ -1,0 +1,8 @@
+<div class="collection with-header">
+    <div class="collection-header">{{ site.data.ways[include.way].title }}</div>
+    {% assign last_step = site.data.ways[include.way].steps | size | minus: 1 %}
+    {% for i in (0..last_step) %}
+    {% assign step = site.data.ways[include.way].steps[i] %}
+    <a href="{{ site.url}}/{{ step.url }}" class="collection-item {% if i == include.current_step %}active{% endif %}"> {{ step.title }}</a>   
+{% endfor %}
+</div>
